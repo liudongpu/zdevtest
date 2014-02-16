@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Appenders -->
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ABSOLUTE} %5p %40.40c:%4L - %m%n" />
+		</layout>
+	</appender>
+
+	<!--输出方式是：每天一个日志文件 -->
+	<!--设置通道名称是：file，输出方式DailyRollingFileAppender -->
+	<appender name="myFile" class="org.apache.log4j.DailyRollingFileAppender">
+
+		<!--日志文件路径和文件名称 -->
+		<!-- 加../在logs,加/在C盘,不加在bin目录 -->
+		<!-- 如果在加载时设置了变量System.setProperty("WebApp", appRoot)， 可在此取出来${WebApp} -->
+		<param name="File" value="${WORKDIR}/logs/app.log" />
+
+		<!-- 设置是否在重新启动服务时，在原有日志的基础添加新日志 -->
+		<param name="Append" value="true" />
+
+		<!-- Rollover at midnight each day -->
+		<!-- e.g. mylog.log.2009-11-25.log -->
+		<param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+
+		<!-- Rollover at the top of each hour <param name="DatePattern" value="'.'yyyy-MM-dd-HH'.log'"/> -->
+
+		<layout class="org.apache.log4j.PatternLayout">
+
+			<!-- The default pattern: Date Priority [Category] Message\n -->
+			<param name="ConversionPattern" value="%d %-5p [%c] %m%n" />
+
+			<!-- The full pattern: Date MS Priority [Category] (Thread:NDC) Message\n -->
+			<!-- <param name="ConversionPattern" value="%d %-5r %-5p [%c] (%t:%x) 
+				%m%n"/> -->
+		</layout>
+	</appender>
+
+
+
+	<!-- Application Loggers -->
+	<logger name="com.cmall">
+		<level value="info" />
+	</logger>
+
+	<logger name="com.srnpr">
+		<level value="info" />
+	</logger>
+
+
+	
+
+	<!-- Root Logger -->
+	<root>
+		<priority value="warn" />
+
+		<appender-ref ref="console" />
+		
+	</root>
+
+</log4j:configuration>
