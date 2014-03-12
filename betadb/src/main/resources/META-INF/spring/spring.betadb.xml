@@ -23,12 +23,12 @@
 	
 	
 	
-	
-	
-	
-	
-	
 
+	
+	<bean id="bean_betadb_testCallService" class="com.zdevtest.betadb.txservice.CallServiceImpl"/>
+	
+	
+	<bean id="bean_betadb_bocalldo" class="com.zdevtest.betadb.txservice.BoCallDo"/>
 
 
 
