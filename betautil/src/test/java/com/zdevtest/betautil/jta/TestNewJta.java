@@ -20,11 +20,12 @@ public class TestNewJta {
 		
 		//BoCallDo boCallDo=new BoCallDo();
 		
-		ICallService callServiceImpl=BeansHelper.upBean("bean_betadb_testCallService");
+		CallServiceImpl callServiceImpl=BeansHelper.upBean("bean_betadb_testCallService");
 		
 		
 		TestCall testCall=new TestCall();
 		testCall.setDropdown(FormatHelper.upDateTime());
+		testCall.setZid(9);
 		
 		int iCount= callServiceImpl.insertCall(testCall);
 		BaseLog.LogInfo(this.getClass().getName(), 0, iCount);
