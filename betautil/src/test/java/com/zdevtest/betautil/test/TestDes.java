@@ -18,7 +18,7 @@ public class TestDes extends TestHelper {
 
 		try {
 			sPassString = SecrurityHelper.DesEncryptStr("abcdefgh",
-					"a");
+					"加密之后是什么东西呢");
 			
 			sDecString=SecrurityHelper.DesDencryptStr("abcdefgh", sPassString);
 		} catch (Exception e) {
