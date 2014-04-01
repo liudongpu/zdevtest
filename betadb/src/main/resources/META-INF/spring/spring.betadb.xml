@@ -32,7 +32,7 @@
 
 
 
-
+	<bean id="bean_betadb_testcallmapper" class="com.zdevtest.betadb.txmapper.TestCallMapper"/>
 
 
 </beans>
