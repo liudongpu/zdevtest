@@ -11,8 +11,11 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.srnpr.zapadmin">
-		<level value="info" />
+	<logger name="com.srnpr">
+		<level value="debug" />
+	</logger>
+	<logger name="com.zdevtest">
+		<level value="debug" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
@@ -34,7 +37,7 @@
 
 	<!-- Root Logger -->
 	<root>
-		<priority value="debug" />
+		<priority value="info" />
 		<appender-ref ref="console" />
 	</root>
 	
